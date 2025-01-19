@@ -17,6 +17,7 @@ class ViewController: BaseViewController {
         return button
     }()
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
        
@@ -30,8 +31,18 @@ class ViewController: BaseViewController {
             make.height.equalTo(40)
         }
         navButton.addTarget(self, action: #selector(navButtonClick), for: .touchUpInside)
+        
+        addNotiObservable()
     }
 
+    private func addNotiObservable() {
+        let obersable = NotificationCenter.default.addObserver(forName: showModelViewController, object: nil, queue: .main) { [weak self] noti in
+            guard let self  = self else { return }
+            let modelViewController = ModelViewController()
+            self.present(modelViewController, animated: true)
+        }
+    }
+    
     @objc private func navButtonClick() {
         let vc = ViewControllerSecond.init()
        

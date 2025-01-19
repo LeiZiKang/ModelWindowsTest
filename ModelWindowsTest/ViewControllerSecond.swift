@@ -11,6 +11,6 @@ class ViewControllerSecond: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.label.text = "Second ViewController"
+        self.label.text = "ViewController 2"
     }
 }

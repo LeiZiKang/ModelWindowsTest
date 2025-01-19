@@ -10,7 +10,7 @@ import SnapKit
 
 class ViewController: BaseViewController {
     
-   private  let navButton: UIButton = {
+   private let navButton: UIButton = {
         let button = UIButton()
         button.setTitle("nav", for: .normal)
         button.setTitleColor(.blue, for: .normal)
@@ -32,11 +32,10 @@ class ViewController: BaseViewController {
         navButton.addTarget(self, action: #selector(navButtonClick), for: .touchUpInside)
     }
 
-    @objc func navButtonClick() {
+    @objc private func navButtonClick() {
         let vc = ViewControllerSecond.init()
-        let navigationViewController = UINavigationController(rootViewController: self)
-        navigationViewController.pushViewController(vc, animated: true)
-        debugPrint("yes")
+       
+        self.navigationController?.pushViewController(vc, animated: true)
     }
 }
 

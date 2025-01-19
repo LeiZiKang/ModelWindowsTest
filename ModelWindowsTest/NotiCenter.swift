@@ -9,12 +9,11 @@ import Foundation
 
 
 
-    
-    let showModelViewController: Notification.Name  =
-        .init("showModelViewController")
-    
-    
-    var dismissModelViewController: Notification.Name =
-        .init("dismissModelViewController")
-    
+
+let showModelViewController: Notification.Name  =
+    .init("showModelViewController")
+
+
+let showAlert: Notification.Name = .init("showAlert")
+
 
